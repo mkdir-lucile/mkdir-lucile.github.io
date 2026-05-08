@@ -28,10 +28,7 @@ twitter_username: jekyllrb
 github_username:  mkdir-lucile
 
 theme: null
-
-# Build settings
-plugins:
-  - jekyll-feed
+plugins: []
 
 # Exclude from processing.
 # The following items will not be processed, by default.
