@@ -1,0 +1,147 @@
+---
+layout: default
+title: "Accueil"
+description: "Portfolio de Lucile — future ingénieure en informatique"
+---
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+
+  <div class="hero-text">
+    <h1 class="hero-name">Lucile</h1>
+    <p class="hero-tagline">étudiante à l'ENSIMAG<br>
+    passionnée par l'informatique et les mathématiques</p>
+  </div>
+
+  <!-- Photo de profil — remplace l'image par la tienne dans assets/images/ -->
+  <div class="hero-image">
+    <img src="{{ '/assets/images/lucile.png' | relative_url }}"
+         alt="Photo de Lucile"
+         width="280" height="350">
+  </div>
+
+</section>
+
+
+<!-- ==================== À PROPOS ==================== -->
+<section class="section about">
+
+  <h2 class="section-title">à propos de moi</h2>
+
+  <p>
+    2e année d'école d'ingénieur <br />
+    recherche de stage de 2 mois pour l'été 2027 <br />
+    spécialisation en web et programmation<br />
+  </p>
+
+</section>
+
+
+<!-- ==================== PROJETS EN VEDETTE ==================== -->
+<!-- On affiche ici les 3 projets marqués "featured: true" dans leur front matter. -->
+<!-- Si tu n'as pas encore de pages de projets, tu peux mettre le contenu en dur. -->
+<section class="section featured-projects">
+
+  <h2 class="section-title">projets récents</h2>
+
+  <div class="project-grid">
+
+    {% assign featured = site.projects | where: "featured", true | limit: 3 %}
+
+    {% if featured.size > 0 %}
+
+      {% for project in featured %}
+      <article class="project-card">
+        <h3 class="project-card-title">{{ project.title }}</h3>
+        <p class="project-card-desc">{{ project.description }}</p>
+        <div class="project-card-tags">
+          {% for tag in project.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <a href="{{ project.url | relative_url }}" class="project-card-link">
+          Voir le projet →
+        </a>
+      </article>
+      {% endfor %}
+
+    {% else %}
+      <!-- Projets en dur le temps de configurer la collection Jekyll -->
+      <article class="project-card">
+        <h3 class="project-card-title">projet architecture</h3>
+        <p class="project-card-desc">réalisation d'un processeur RISCV 32 bits en assembleur</p>
+        <div class="project-card-tags">
+          <span class="tag">RISCV</span>
+          <span class="tag">assembleur</span>
+        </div>
+        <a href="#" class="project-card-link">voir le projet →</a>
+      </article>
+
+      <article class="project-card">
+        <h3 class="project-card-title">projet C</h3>
+        <p class="project-card-desc">programmation orientée objets d'une interface graphique (fenêtres, boutons, champs) en C</p>
+        <div class="project-card-tags">
+          <span class="tag">C</span>
+          <span class="tag">POO</span>
+        </div>
+        <a href="#" class="project-card-link">voir le projet →</a>
+      </article>
+
+      <article class="project-card">
+        <h3 class="project-card-title">projet OS</h3>
+        <p class="project-card-desc">réalisation d'un système d'exploitation (driver vidéo, timers, threads)</p>
+        <div class="project-card-tags">
+          <span class="tag">C</span>
+          <span class="tag">assembleur</span>
+        </div>
+        <a href="#" class="project-card-link">voir le projet →</a>
+      </article>
+    {% endif %}
+
+  </div>
+
+  <div class="section-footer">
+    <a href="{{ '/projets/' | relative_url }}" class="btn btn-secondary">
+      tous les projets →
+    </a>
+  </div>
+
+</section>
+
+
+<!-- ==================== COMPÉTENCES (aperçu) ==================== -->
+<section class="section skills-preview">
+
+  <h2 class="section-title">je maîtrise</h2>
+
+  <ul class="skills-list">
+    <li class="skill-item">
+      <span class="skill-name">C</span>
+      <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">Python</span>
+      <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">Jekyll / Git</span>
+      <div class="skill-bar"><div class="skill-fill" style="width: 55%"></div></div>
+    </li>
+  </ul>
+
+  <a href="{{ '/competences/' | relative_url }}" class="btn btn-secondary">
+    voir toutes mes compétences →
+  </a>
+
+</section>
+
+
+<section class="section-contacts">
+  <h2 class="section-title">me contacter</h2>
+  <p>
+    mail : lucilehudryyy@gmail.com <br />
+  </p>
+  <a href="{{ '/contacts/' | relative_url }}" class="btn btn-secondary">
+    voir tous mes contacts →
+  </a>
+</section>

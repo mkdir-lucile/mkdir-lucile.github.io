@@ -1,0 +1,424 @@
+/* ============================================================
+   PORTFOLIO LUCILE — thème VSCode Light
+   Structure : variables → reset → layout → header →
+               hero → sections → projets → compétences →
+               contacts → boutons → footer → responsive
+   ============================================================ */
+
+
+/* ── 1. VARIABLES ─────────────────────────────────────────── */
+
+:root {
+  /* Palette VSCode Light */
+  --color-bg:            #f3f3f3;
+  --color-surface:       #ffffff;
+  --color-surface-alt:   #f8f8f8;
+  --color-border:        #e4e4e4;
+  --color-border-strong: #c8c8c8;
+
+  /* Texte */
+  --color-text:          #1e1e1e;
+  --color-muted:         #6a737d;
+
+  /* Accents inspirés de la coloration syntaxique VSCode Light */
+  --color-blue:          #0070c1;   /* mots-clés */
+  --color-purple:        #7c4dff;   /* types / classes */
+  --color-green:         #008000;   /* strings / commentaires */
+  --color-teal:          #267f99;   /* types primitifs */
+
+  --color-accent:        var(--color-blue);
+  --color-accent-light:  #ddeeff;
+
+  /* Numéros de ligne */
+  --color-line-num:      #a0a0a0;
+
+  /* Polices */
+  --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono',
+               'Consolas', 'Courier New', monospace;
+  --font-ui:   -apple-system, 'Segoe UI', system-ui, sans-serif;
+
+  /* Espacements */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+
+  --container-width: 880px;
+  --transition: 0.18s ease;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+}
+
+
+/* ── 2. RESET ─────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+ul { list-style: none; }
+
+
+/* ── 3. LAYOUT ────────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.site-main { padding: var(--space-lg) 0; }
+
+
+/* ── 4. HEADER — barre d'onglets VSCode ───────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding: 0 var(--space-sm);
+}
+.site-title:hover { color: var(--color-text); text-decoration: none; }
+
+/* Onglets de navigation */
+.site-nav { display: flex; align-items: stretch; }
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0 1.1rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  border-right: 1px solid var(--color-border);
+  border-top: 2px solid transparent;
+  transition: color var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+.nav-link:first-child { border-left: 1px solid var(--color-border); }
+.nav-link:hover { background: var(--color-surface); color: var(--color-text); text-decoration: none; }
+
+/* Onglet actif : fond blanc + trait bleu en haut */
+.nav-link.active {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-top-color: var(--color-blue);
+  font-weight: 500;
+}
+
+/* Icône fichier devant chaque onglet */
+.nav-link::before {
+  content: '◈';
+  font-size: 0.65rem;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+.nav-link.active::before { opacity: 1; color: var(--color-blue); }
+
+
+/* ── 5. NUMÉROS DE LIGNE ──────────────────────────────────── */
+
+body { counter-reset: line-section; }
+
+.section,
+.section-contacts {
+  position: relative;
+  margin-bottom: var(--space-lg);
+  padding-left: 3.5rem;
+}
+
+.section::before,
+.section-contacts::before {
+  counter-increment: line-section;
+  content: counter(line-section);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 2.6rem;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-line-num);
+  user-select: none;
+}
+
+
+/* ── 6. TITRES DE SECTION — style commentaire ─────────────── */
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-green);
+  margin-bottom: var(--space-md);
+}
+.section-title::before { content: '// '; }
+
+.section-footer { margin-top: var(--space-md); }
+
+
+/* ── 7. TEXTE DES PARAGRAPHES — monospace ─────────────────── */
+
+.about p,
+.section-contacts p {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 2;
+}
+
+.section-contacts p a { color: var(--color-green); font-family: var(--font-mono); }
+.section-contacts p a:hover { text-decoration: underline; }
+
+.section-contacts { margin-bottom: var(--space-lg); }
+.section-contacts .section-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-green);
+  margin-bottom: var(--space-md);
+}
+.section-contacts .section-title::before { content: '// '; }
+
+
+/* ── 8. HERO ──────────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.hero-text { flex: 1; }
+
+/* Nom — couleur "variable" bleue */
+.hero-name {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-blue);
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+/* Tagline — style commentaire bloc */
+.hero-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--color-green);
+  line-height: 2;
+  margin-bottom: var(--space-md);
+}
+.hero-tagline::before { content: '/* '; }
+.hero-tagline::after  { content: ' */'; }
+
+.hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+
+.hero-image { flex-shrink: 0; }
+.hero-image img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+
+/* ── 9. BOUTONS ───────────────────────────────────────────── */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-blue);
+  color: #fff;
+  border-color: var(--color-blue);
+}
+.btn-primary:hover { background: #005aa3; border-color: #005aa3; text-decoration: none; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-blue);
+  border-color: var(--color-border-strong);
+}
+.btn-secondary:hover { background: var(--color-accent-light); border-color: var(--color-blue); text-decoration: none; }
+
+
+/* ── 10. PROJETS ──────────────────────────────────────────── */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-sm);
+}
+
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-purple);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  transition: box-shadow var(--transition);
+}
+.project-card:hover { box-shadow: 0 2px 12px rgba(0, 112, 193, 0.1); }
+
+/* Titre carte — style "function name" */
+.project-card-title {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-blue);
+}
+.project-card-title::before { content: 'fn '; color: var(--color-purple); }
+
+/* Description — commentaire */
+.project-card-desc {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.project-card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: var(--space-xs); }
+
+.project-card-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-teal);
+  margin-top: var(--space-xs);
+}
+.project-card-link:hover { text-decoration: underline; }
+
+
+/* ── 11. TAGS ─────────────────────────────────────────────── */
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-light);
+  color: var(--color-blue);
+  border: 1px solid #b3d0f0;
+}
+
+
+/* ── 12. COMPÉTENCES ──────────────────────────────────────── */
+
+.skills-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: var(--space-md); }
+
+.skill-item { display: flex; align-items: center; gap: 1rem; }
+
+.skill-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-teal);
+  min-width: 110px;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
+  border-radius: 99px;
+}
+
+
+/* ── 13. FOOTER ───────────────────────────────────────────── */
+
+.site-footer {
+  background: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-sm) 0;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.site-footer p,
+.site-footer a {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--color-line-num);
+}
+.site-footer a:hover { color: var(--color-green); text-decoration: underline; }
+
+
+/* ── 14. RESPONSIVE ───────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .hero { flex-direction: column-reverse; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero-image img { width: 140px; height: 175px; margin: 0 auto; }
+
+  .nav-link { padding: 0 0.65rem; font-size: 0.78rem; }
+
+  .section,
+  .section-contacts { padding-left: 2rem; }
+
+  .project-grid { grid-template-columns: 1fr; }
+}
