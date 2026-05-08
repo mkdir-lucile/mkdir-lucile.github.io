@@ -30,7 +30,6 @@ twitter_username: jekyllrb
 github_username:  mkdir-lucile
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
 
