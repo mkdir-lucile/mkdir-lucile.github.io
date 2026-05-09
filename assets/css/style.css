@@ -47,7 +47,6 @@
 
   /* Syntaxe */
   --color-blue:        #0070c1;
-  --color-purple:      #7c4dff;
   --color-green:       #008000;
   --color-teal:        #267f99;
   --color-muted:       #6a737d;
@@ -476,7 +475,7 @@ ul { list-style: none; }
 .project-card {
   background: #fafcff;
   border: 1px solid #dde6f0;
-  border-left: 3px solid var(--color-purple);
+  border-left: 3px solid var(#005aa3);
   border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
   display: flex;
@@ -486,7 +485,7 @@ ul { list-style: none; }
 }
 .project-card:hover {
   box-shadow: 0 2px 10px rgba(0,112,193,0.1);
-  border-color: var(--color-purple);
+  border-color: var(#005aa3);
 }
 
 .project-card-title {
@@ -495,7 +494,7 @@ ul { list-style: none; }
   font-weight: 600;
   color: var(--color-blue);
 }
-.project-card-title::before { content: 'fn '; color: var(--color-purple); }
+.project-card-title::before { content: ''; color: var(#005aa3); }
 
 .project-card-desc {
   font-family: var(--font-mono);
@@ -550,7 +549,7 @@ ul { list-style: none; }
 }
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
+  background: linear-gradient(90deg, var(--color-blue), var(#005aa3));
   border-radius: 99px;
 }
 
