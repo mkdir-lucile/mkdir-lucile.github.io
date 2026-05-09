@@ -1,32 +1,25 @@
 ---
 layout: default
 title: "Projets"
-description: "Projets de Lucile — ingénierie informatique"
+description: "Projets de Lucile — future ingénieure informatique"
 ---
 
 <section class="section projects-page">
-  <h2 class="section-title">tous les projets</h2>
-
-  <!-- Indicateur de navigation -->
   <div class="carousel-hint">
-    <span class="carousel-hint-text">← faire défiler →</span>
     <div class="carousel-dots" id="carousel-dots"></div>
   </div>
 
-  <!-- Piste de défilement -->
   <div class="carousel-track" id="carousel-track">
 
     <!-- ── Projet 1 ── -->
-    <article class="project-full-card" data-index="0">
+    <article class="project-full-card">
       <div class="pfc-left">
         <div class="pfc-number">01</div>
-        <div class="pfc-meta">
-          <span class="pfc-date">sept. 2024 — déc. 2024</span>
-          <div class="pfc-langs">
-            <span class="pfc-lang">RISC-V</span>
-            <span class="pfc-lang">Assembleur</span>
-          </div>
+        <div class="pfc-langs">
+          <span class="pfc-lang">RISC-V</span>
+          <span class="pfc-lang">Assembleur</span>
         </div>
+        <div class="pfc-date">sept. 2024 — déc. 2024</div>
       </div>
 
       <div class="pfc-center">
@@ -55,29 +48,25 @@ description: "Projets de Lucile — ingénierie informatique"
 
       <div class="pfc-right">
         <a href="https://github.com/mkdir-lucile" target="_blank" class="pfc-github-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
           voir sur GitHub
         </a>
         <div class="pfc-nav">
-          <button class="pfc-arrow pfc-arrow--prev" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
-          <button class="pfc-arrow pfc-arrow--next" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
         </div>
       </div>
     </article>
 
-    <!-- ── Projet 2 ── -->
-    <article class="project-full-card" data-index="1">
+    <!-- ── Projet 2 (avec image) ── -->
+    <article class="project-full-card">
       <div class="pfc-left">
         <div class="pfc-number">02</div>
-        <div class="pfc-meta">
-          <span class="pfc-date">jan. 2025 — avr. 2025</span>
-          <div class="pfc-langs">
-            <span class="pfc-lang">C</span>
-            <span class="pfc-lang">POO</span>
-          </div>
+        <div class="pfc-langs">
+          <span class="pfc-lang">C</span>
+          <span class="pfc-lang">POO</span>
         </div>
+        <div class="pfc-date">jan. 2025 — avr. 2025</div>
       </div>
 
       <div class="pfc-center">
@@ -99,31 +88,29 @@ description: "Projets de Lucile — ingénierie informatique"
         </p>
       </div>
 
-      <div class="pfc-right">
+      <!-- avec image : remplace le src par le chemin de ton image -->
+      <div class="pfc-right pfc-right--has-image">
+        <img src="/assets/images/projet-c.png" alt="capture projet C" class="pfc-image">
         <a href="https://github.com/mkdir-lucile" target="_blank" class="pfc-github-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
           voir sur GitHub
         </a>
         <div class="pfc-nav">
-          <button class="pfc-arrow pfc-arrow--prev" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
-          <button class="pfc-arrow pfc-arrow--next" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
         </div>
       </div>
     </article>
 
     <!-- ── Projet 3 ── -->
-    <article class="project-full-card" data-index="2">
+    <article class="project-full-card">
       <div class="pfc-left">
         <div class="pfc-number">03</div>
-        <div class="pfc-meta">
-          <span class="pfc-date">fév. 2025 — mai 2025</span>
-          <div class="pfc-langs">
-            <span class="pfc-lang">C</span>
-            <span class="pfc-lang">Assembleur</span>
-          </div>
+        <div class="pfc-langs">
+          <span class="pfc-lang">C</span>
+          <span class="pfc-lang">Assembleur</span>
         </div>
+        <div class="pfc-date">fév. 2025 — mai 2025</div>
       </div>
 
       <div class="pfc-center">
@@ -148,29 +135,25 @@ description: "Projets de Lucile — ingénierie informatique"
 
       <div class="pfc-right">
         <a href="https://github.com/mkdir-lucile" target="_blank" class="pfc-github-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
           voir sur GitHub
         </a>
         <div class="pfc-nav">
-          <button class="pfc-arrow pfc-arrow--prev" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
-          <button class="pfc-arrow pfc-arrow--next" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
         </div>
       </div>
     </article>
 
-    <!-- ── Projet 4 ── -->
-    <article class="project-full-card" data-index="3">
+    <!-- ── Projet 4 (avec image) ── -->
+    <article class="project-full-card">
       <div class="pfc-left">
         <div class="pfc-number">04</div>
-        <div class="pfc-meta">
-          <span class="pfc-date">oct. 2024 — nov. 2024</span>
-          <div class="pfc-langs">
-            <span class="pfc-lang">Python</span>
-            <span class="pfc-lang">NumPy</span>
-          </div>
+        <div class="pfc-langs">
+          <span class="pfc-lang">Python</span>
+          <span class="pfc-lang">NumPy</span>
         </div>
+        <div class="pfc-date">oct. 2024 — nov. 2024</div>
       </div>
 
       <div class="pfc-center">
@@ -192,31 +175,29 @@ description: "Projets de Lucile — ingénierie informatique"
         </p>
       </div>
 
-      <div class="pfc-right">
+      <!-- avec image -->
+      <div class="pfc-right pfc-right--has-image">
+        <img src="/assets/images/projet-data.png" alt="capture analyse données" class="pfc-image">
         <a href="https://github.com/mkdir-lucile" target="_blank" class="pfc-github-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
           voir sur GitHub
         </a>
         <div class="pfc-nav">
-          <button class="pfc-arrow pfc-arrow--prev" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
-          <button class="pfc-arrow pfc-arrow--next" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
         </div>
       </div>
     </article>
 
     <!-- ── Projet 5 ── -->
-    <article class="project-full-card" data-index="4">
+    <article class="project-full-card">
       <div class="pfc-left">
         <div class="pfc-number">05</div>
-        <div class="pfc-meta">
-          <span class="pfc-date">jan. 2025 — jan. 2025</span>
-          <div class="pfc-langs">
-            <span class="pfc-lang">Jekyll</span>
-            <span class="pfc-lang">HTML/CSS</span>
-          </div>
+        <div class="pfc-langs">
+          <span class="pfc-lang">Jekyll</span>
+          <span class="pfc-lang">HTML/CSS</span>
         </div>
+        <div class="pfc-date">jan. 2025 — jan. 2025</div>
       </div>
 
       <div class="pfc-center">
@@ -239,26 +220,23 @@ description: "Projets de Lucile — ingénierie informatique"
         </p>
       </div>
 
-      <div class="pfc-right">
-        <a href="https://github.com/mkdir-lucile" target="_blank" class="pfc-github-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
+      <div class="pfc-right pfc-right--has-image">
+        <img src="/assets/images/website.png" alt="capture analyse données" class="pfc-image">
+        <a href="https://github.com/mkdir-lucile/mkdir-lucile.github.io" target="_blank" class="pfc-github-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
           voir sur GitHub
         </a>
         <div class="pfc-nav">
-          <button class="pfc-arrow pfc-arrow--prev" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
-          <button class="pfc-arrow pfc-arrow--next" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(-1)" aria-label="précédent">←</button>
+          <button class="pfc-arrow" onclick="scrollCarousel(1)" aria-label="suivant">→</button>
         </div>
       </div>
     </article>
 
-  </div><!-- /carousel-track -->
+  </div>
 </section>
 
 <style>
-/* ── CAROUSEL ─────────────────────────────────────────────── */
-
 .projects-page { margin-bottom: 0; }
 
 .carousel-hint {
@@ -267,157 +245,131 @@ description: "Projets de Lucile — ingénierie informatique"
   gap: 1rem;
   margin-bottom: 1.2rem;
 }
-
 .carousel-hint-text {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--color-muted);
   opacity: 0.7;
 }
-
-.carousel-dots {
-  display: flex;
-  gap: 6px;
-}
+.carousel-dots { display: flex; gap: 6px; }
 .carousel-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #ffaac2;
-  transition: background 0.2s, transform 0.2s;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
 }
 .carousel-dot--active {
   background: var(--color-blue);
   transform: scale(1.3);
 }
 
-/* Piste : scroll-snap horizontal */
 .carousel-track {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  gap: 0;
   scrollbar-width: none;
-  /* Compense le padding de l'editor-body pour aller bord à bord */
   margin: 0 calc(-1 * var(--space-md));
 }
 .carousel-track::-webkit-scrollbar { display: none; }
 
-/* ── Carte projet pleine largeur ── */
 .project-full-card {
   scroll-snap-align: start;
   flex: 0 0 100%;
   display: grid;
-  grid-template-columns: 120px 1fr 160px;
+  grid-template-columns: 110px 1fr 200px;
   gap: var(--space-md);
   padding: var(--space-md);
-  min-height: 340px;
+  min-height: 320px;
   box-sizing: border-box;
   opacity: 0;
-  transform: translateX(30px);
-  animation: cardIn 0.4s ease forwards;
+  transform: translateX(20px);
+  animation: cardIn 0.35s ease forwards;
 }
-.project-full-card:nth-child(1) { animation-delay: 0.05s; }
-.project-full-card:nth-child(2) { animation-delay: 0.10s; }
-.project-full-card:nth-child(3) { animation-delay: 0.15s; }
-.project-full-card:nth-child(4) { animation-delay: 0.20s; }
-.project-full-card:nth-child(5) { animation-delay: 0.25s; }
+@keyframes cardIn { to { opacity: 1; transform: translateX(0); } }
 
-@keyframes cardIn {
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* Colonne gauche : numéro + méta */
+/* Colonne gauche */
 .pfc-left {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.75rem;
   padding-top: 4px;
 }
-
 .pfc-number {
   font-family: var(--font-mono);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #ffcfde;
   line-height: 1;
   user-select: none;
 }
-
-.pfc-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.pfc-date {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-muted);
-}
-
 .pfc-langs {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
-
 .pfc-lang {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--color-blue);
   background: #ffe9ef;
   border: 1px solid #ffaac2;
   border-radius: 3px;
-  padding: 1px 6px;
+  padding: 2px 7px;
   width: fit-content;
 }
+.pfc-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-muted);
+  margin-top: auto;
+}
 
-/* Colonne centrale : contenu */
+/* Colonne centrale */
 .pfc-center {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.65rem;
   border-left: 2px solid #ffcfde;
   padding-left: var(--space-md);
 }
-
-.pfc-icon {
-  width: 32px;
-  height: 32px;
-  color: var(--color-blue);
-}
+.pfc-icon { width: 28px; height: 28px; color: var(--color-blue); }
 .pfc-icon svg { width: 100%; height: 100%; }
-
 .pfc-title {
   font-family: var(--font-mono);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-blue);
 }
-
-.pfc-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
+.pfc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .pfc-desc {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   color: #bb1242;
   line-height: 1.8;
-  max-width: 520px;
 }
 
-/* Colonne droite : GitHub + navigation */
+/* Colonne droite */
 .pfc-right {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
+  gap: 0.75rem;
+}
+.pfc-right--has-image { justify-content: flex-start; }
+.pfc-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ffaac2;
+  margin-bottom: auto;
 }
 
 .pfc-github-btn {
@@ -431,24 +383,16 @@ description: "Projets de Lucile — ingénierie informatique"
   border-radius: 4px;
   padding: 0.4rem 0.75rem;
   background: #ffe9ef;
-  transition: background 0.15s, border-color 0.15s;
   white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
 }
 .pfc-github-btn svg { width: 15px; height: 15px; }
-.pfc-github-btn:hover {
-  background: #ffcfde;
-  border-color: var(--color-blue);
-  text-decoration: none;
-}
+.pfc-github-btn:hover { background: #ffcfde; border-color: var(--color-blue); text-decoration: none; }
 
-.pfc-nav {
-  display: flex;
-  gap: 8px;
-}
-
+.pfc-nav { display: flex; gap: 8px; }
 .pfc-arrow {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 1px solid #ffaac2;
   background: #ffe9ef;
@@ -462,23 +406,26 @@ description: "Projets de Lucile — ingénierie informatique"
 }
 .pfc-arrow:hover { background: #ffcfde; border-color: var(--color-blue); }
 
-/* ── Responsive mobile ── */
+/* Mobile */
 @media (max-width: 768px) {
   .project-full-card {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     min-height: unset;
     padding: var(--space-sm);
   }
-
-  .pfc-left { flex-direction: row; align-items: center; }
+  .pfc-left { flex-direction: row; align-items: center; flex-wrap: wrap; }
   .pfc-number { font-size: 2rem; }
-  .pfc-langs { flex-direction: row; flex-wrap: wrap; }
-
-  .pfc-center { border-left: none; border-top: 2px solid #ffcfde; padding-left: 0; padding-top: var(--space-sm); }
-
-  .pfc-right { flex-direction: row; align-items: center; margin-top: var(--space-sm); }
-
+  .pfc-date { margin-top: 0; margin-left: auto; }
+  .pfc-langs { flex-direction: row; }
+  .pfc-center {
+    border-left: none;
+    border-top: 2px solid #ffcfde;
+    padding-left: 0;
+    padding-top: var(--space-sm);
+  }
+  .pfc-right { flex-direction: row; align-items: center; justify-content: space-between; }
+  .pfc-right--has-image { flex-direction: column; align-items: stretch; }
+  .pfc-image { height: 120px; }
   .carousel-track { margin: 0 calc(-1 * var(--space-sm)); }
 }
 </style>
@@ -488,9 +435,9 @@ description: "Projets de Lucile — ingénierie informatique"
   const track = document.getElementById('carousel-track');
   const cards = track.querySelectorAll('.project-full-card');
   const dotsContainer = document.getElementById('carousel-dots');
+  const total = cards.length;
   let current = 0;
 
-  // Crée les points
   cards.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (i === 0 ? ' carousel-dot--active' : '');
@@ -506,15 +453,16 @@ description: "Projets de Lucile — ingénierie informatique"
   }
 
   function goTo(index) {
-    current = Math.max(0, Math.min(index, cards.length - 1));
+    // Boucle : dernier → premier et premier → dernier
+    current = ((index % total) + total) % total;
     track.scrollTo({ left: track.clientWidth * current, behavior: 'smooth' });
     updateDots();
   }
 
-  // Expose la fonction pour les boutons inline
+  // Exposé pour les boutons inline
   window.scrollCarousel = (dir) => goTo(current + dir);
 
-  // Sync dots si l'utilisateur scrolle manuellement
+  // Sync dots au scroll manuel
   track.addEventListener('scroll', () => {
     const index = Math.round(track.scrollLeft / track.clientWidth);
     if (index !== current) { current = index; updateDots(); }
