@@ -388,7 +388,6 @@ ul { list-style: none; }
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
   padding-top: var(--space-xs);
 }
 
@@ -427,6 +426,7 @@ ul { list-style: none; }
 
 /* ── 12. TEXTE / PARAGRAPHES ──────────────────────────────── */
 
+.herop,
 .about p,
 .section-contacts p {
   font-family: var(--font-mono);
@@ -566,4 +566,14 @@ ul { list-style: none; }
   .line-numbers { display: none; }
 
   .project-grid { grid-template-columns: 1fr; }
+
+  .herop,
+  .about p,
+  .section-contacts p {
+  font-size: 0.78rem;
+  }
+
+  .hero-tagline{
+  font-size: 0.82rem;
+  }
 }
