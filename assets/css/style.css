@@ -8,48 +8,48 @@
 
 :root {
   /* Sidebar / activity bar — bleuté foncé VSCode */
-  --sidebar-bg:        #1e3a5f;
-  --sidebar-hover:     #254a77;
-  --sidebar-active:    #2d5a8e;
-  --sidebar-text:      #a8c4e0;
-  --sidebar-text-dim:  #6a90b8;
-  --sidebar-title:     #7aabda;
+  --sidebar-bg:        #db6496;
+  --sidebar-hover:     #e589a8;
+  --sidebar-active:    #f38fb0;
+  --sidebar-text:      #ffcfde;
+  --sidebar-text-dim:  #ffadc4;
+  --sidebar-title:     #ffcfe0;
 
-  --activity-bg:       #17304f;
-  --activity-icon:     #6a90b8;
-  --activity-active:   #ffffff;
+  --activity-bg:       #b23b6d;
+  --activity-icon:     #de89a5;
+  --activity-active:   #f8c6d9;
 
   /* Barre d'onglets — bleuté pastel */
-  --tabbar-bg:         #ccdff5;
-  --tab-bg:            #b8d0ed;
-  --tab-active-bg:     #ffffff;
-  --tab-active-border: #0070c1;
-  --tab-text:          #3a5a7a;
-  --tab-text-active:   #1e1e1e;
+  --tabbar-bg:         #db6496;
+  --tab-bg:            #f38fb0;
+  --tab-active-bg:     #fff1f5;
+  --tab-active-border: #f37095;
+  --tab-text:          #fff1f5;
+  --tab-text-active:   #d44a71;
 
   /* Éditeur */
-  --editor-bg:         #fffffe;
+  --editor-bg:         #fff1f5;
   --editor-text:       #1e1e1e;
 
   /* Breadcrumb */
-  --breadcrumb-bg:     #f0f4fa;
-  --breadcrumb-text:   #6a90b8;
-  --breadcrumb-active: #1e1e1e;
+  --breadcrumb-bg:     #ffe7ee;
+  --breadcrumb-text:   #f990ae;
+  --breadcrumb-active: #9e0d49;
 
   /* Status bar — bleu VSCode */
-  --statusbar-bg:      #0070c1;
-  --statusbar-text:    #ffffff;
+  --statusbar-bg:      #ab467a;
+  --statusbar-text:    #ffcfe8;
 
   /* Numéros de ligne */
-  --line-num-color:    #c0ccd8;
-  --line-num-bg:       #f5f8fc;
+  --line-num-color:    #bb94a9;
+  --line-num-bg:       #ffd0dd;
   --line-num-width:    3rem;
 
   /* Syntaxe */
-  --color-blue:        #0070c1;
-  --color-green:       #008000;
-  --color-teal:        #267f99;
-  --color-muted:       #6a737d;
+  --color-blue:        #b23b6d;
+  --color-green:       #5f8473;
+  --color-teal:        #bb7f96;
+  --color-muted:       #887381;
 
   /* Polices */
   --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
@@ -231,7 +231,7 @@ ul { list-style: none; }
   cursor: pointer;
 }
 .tab:hover {
-  background: #cce3f8;
+  background: #fcccdb;
   color: var(--tab-text-active);
   text-decoration: none;
 }
@@ -273,7 +273,7 @@ ul { list-style: none; }
   gap: 4px;
   padding: 0.25rem var(--space-sm);
   background: var(--breadcrumb-bg);
-  border-bottom: 1px solid #dde6f0;
+  border-bottom: 1px solid #ffaac2;
   flex-shrink: 0;
 }
 
@@ -301,8 +301,8 @@ ul { list-style: none; }
 
 .line-numbers {
   width: var(--line-num-width);
-  background: var(--line-num-bg);
-  border-right: 1px solid #e4ecf4;
+  background: #ffe7ee;
+  border-right: 1px solid #ffaac2;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -420,7 +420,7 @@ ul { list-style: none; }
   height: 237px;
   object-fit: cover;
   border-radius: var(--radius-md);
-  border: 1px solid #dde6f0;
+  border: 1px solid #ffaac2;
 }
 
 /* uniquement utile pour la version mobile */
@@ -465,13 +465,13 @@ ul { list-style: none; }
   color: #fff;
   border-color: var(--color-blue);
 }
-.btn-primary:hover { background: #005aa3; text-decoration: none; }
+.btn-primary:hover { background: #fed4e5; text-decoration: none; }
 .btn-secondary {
   background: transparent;
   color: var(--color-blue);
-  border-color: #b0c8e0;
+  border-color: #ffaac2;
 }
-.btn-secondary:hover { background: #ddeeff; border-color: var(--color-blue); text-decoration: none; }
+.btn-secondary:hover { background: #ffc0d5; border-color: #ffaac2; text-decoration: none; }
 
 
 /* ── 14. PROJETS ──────────────────────────────────────────── */
@@ -483,9 +483,9 @@ ul { list-style: none; }
 }
 
 .project-card {
-  background: #fafcff;
-  border: 1px solid #dde6f0;
-  border-left: 3px solid var(#005aa3);
+  background: #ffc8db;
+  border: 1px solid #ffaac2;
+  border-left: 3px solid var(#ffaac2);
   border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
   display: flex;
@@ -495,7 +495,7 @@ ul { list-style: none; }
 }
 .project-card:hover {
   box-shadow: 0 2px 10px rgba(0,112,193,0.1);
-  border-color: var(#005aa3);
+  border-color: var(#f789a8);
 }
 
 .project-card-title {
@@ -509,7 +509,7 @@ ul { list-style: none; }
 .project-card-desc {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--color-muted);
+  color: #bb1242;
   line-height: 1.6;
   flex: 1;
 }
@@ -519,7 +519,7 @@ ul { list-style: none; }
 .project-card-link {
   font-family: var(--font-mono);
   font-size: 0.76rem;
-  color: var(--color-teal);
+  color: #bb1242;
   margin-top: var(--space-xs);
 }
 .project-card-link:hover { text-decoration: underline; }
@@ -532,9 +532,9 @@ ul { list-style: none; }
   font-size: 0.7rem;
   padding: 2px 7px;
   border-radius: var(--radius-sm);
-  background: #ddeeff;
-  color: var(--color-blue);
-  border: 1px solid #b3d0f0;
+  background: #ffe9ef;
+  color: #f16795;
+  border: 1px solid #ffaac2;
 }
 
 
