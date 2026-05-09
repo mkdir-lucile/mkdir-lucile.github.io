@@ -1,0 +1,341 @@
+---
+layout: default
+title: "Compétences"
+description: "Compétences de Lucile — langages, outils, expériences"
+---
+
+<!-- ── Langages de programmation ── -->
+<section class="section">
+  <h2 class="section-title">langages de programmation</h2>
+
+  <ul class="skills-list">
+    <li class="skill-item">
+      <span class="skill-name">C</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 95%"></div>
+      </div>
+      <span class="skill-level">avancé</span>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">Python</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 95%"></div>
+      </div>
+      <span class="skill-level">avancé</span>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">Haskell</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 80%"></div>
+      </div>
+      <span class="skill-level">avancé</span>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">OCaml</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 95%"></div>
+      </div>
+      <span class="skill-level">avancé</span>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">Rust</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 40%"></div>
+      </div>
+      <span class="skill-level">intermédiaire</span>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">Prolog</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 50%"></div>
+      </div>
+      <span class="skill-level">intermédiaire</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ── Outils & technologies ── -->
+<section class="section">
+  <h2 class="section-title">outils &amp; technologies</h2>
+
+  <div class="tools-group">
+    <span class="tools-label">frontend</span>
+    <div class="tools-tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">Jekyll</span>
+    </div>
+  </div>
+
+  <div class="tools-group">
+    <span class="tools-label">base de données</span>
+    <div class="tools-tags">
+      <span class="tag">SQL</span>
+    </div>
+  </div>
+
+  <div class="tools-group">
+    <span class="tools-label">environnement</span>
+    <div class="tools-tags">
+      <span class="tag">Git</span>
+      <span class="tag">GitHub Pages</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Expériences ── -->
+<section class="section">
+  <h2 class="section-title">expériences</h2>
+
+  <div class="xp-list">
+
+    <!-- <article class="xp-card">
+      <div class="xp-header">
+        <div class="xp-title-block">
+          <span class="xp-badge xp-badge--pro">pro</span>
+          <h3 class="xp-title">développeuse web — stage</h3>
+        </div>
+        <span class="xp-org">Entreprise XYZ · Grenoble</span>
+      </div>
+      <p class="xp-desc">
+        Développement d'une interface d'administration interne en HTML/CSS/JS.
+        Mise en place d'un système de filtrage et d'export de données. Travail en
+        équipe avec méthode agile, revues de code hebdomadaires.
+      </p>
+      <div class="xp-tags">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Git</span>
+      </div>
+    </article> -->
+
+    <article class="xp-card">
+      <div class="xp-header">
+        <div class="xp-title-block">
+          <span class="xp-badge xp-badge--hack">hackathon</span>
+          <h3 class="xp-title">Trader algorithmique</h3>
+        </div>
+        <span class="xp-org">Morgan Stanley</span>
+      </div>
+      <p class="xp-desc">
+        Conception d'un algorithme pour le trading adapté aux variations du marché et simulation de la stratégie sur le cours de la livre par rapport à l'euro. Équipe de 4 personnes.
+      </p>
+      <div class="xp-tags">
+        <span class="tag">Python</span>
+        <span class="tag">finance</span>
+        <span class="tag">algorithmie</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── Langues ── -->
+<section class="section">
+  <h2 class="section-title">langues</h2>
+
+  <ul class="skills-list">
+    <li class="skill-item">
+      <span class="skill-name">français</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 100%"></div>
+      </div>
+      <span class="skill-level">natif</span>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">anglais</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 80%"></div>
+      </div>
+      <span class="skill-level">C1</span>
+    </li>
+    <li class="skill-item">
+      <span class="skill-name">allemand</span>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width: 40%"></div>
+      </div>
+      <span class="skill-level">B1</span>
+    </li>
+  </ul>
+  <br/>
+</section>
+
+<style>
+/* ── Barres de compétences (étend le style global) ── */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: var(--space-md);
+}
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.skill-name {
+  font-family: var(--font-mono);
+  font-size: 0.83rem;
+  color: var(--color-teal);
+  min-width: 110px;
+}
+.skill-bar {
+  flex: 1;
+  height: 5px;
+  background: #ffd0dd;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-blue), #e8749a);
+  border-radius: 99px;
+  width: 0;
+  transition: width 0.8s cubic-bezier(.4,0,.2,1);
+}
+.skill-level {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-muted);
+  min-width: 80px;
+  text-align: right;
+}
+
+/* ── Outils ── */
+.tools-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+.tools-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  min-width: 110px;
+  padding-top: 3px;
+}
+.tools-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ── Expériences ── */
+.xp-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.xp-card {
+  border: 1px solid #ffaac2;
+  border-left: 3px solid var(--color-blue);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  background: #fff7f9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.xp-card:hover {
+  box-shadow: 0 3px 14px rgba(180,50,100,0.1);
+  transform: translateY(-1px);
+}
+
+.xp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.xp-title-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.xp-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.xp-badge--pro {
+  background: #ddf0e8;
+  color: #2d7a5a;
+  border: 1px solid #a8d9c0;
+}
+.xp-badge--hack {
+  background: #ffe9ef;
+  color: var(--color-blue);
+  border: 1px solid #ffaac2;
+}
+
+.xp-title {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-blue);
+}
+.xp-org {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+.xp-desc {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #bb1242;
+  line-height: 1.75;
+}
+.xp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 0.2rem;
+}
+
+/* ── Animation barres au chargement ── */
+@keyframes fillBar {
+  from { width: 0; }
+}
+</style>
+
+<script>
+// Anime les barres quand elles entrent dans le viewport
+(function () {
+  const fills = document.querySelectorAll('.skill-fill');
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const target = e.target.style.width;
+          e.target.style.width = '0';
+          // Petit délai pour que la transition CSS se déclenche
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              e.target.style.width = target;
+            });
+          });
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    fills.forEach(f => {
+      const w = f.style.width;
+      f.dataset.width = w;
+      obs.observe(f);
+    });
+  }
+})();
+</script>

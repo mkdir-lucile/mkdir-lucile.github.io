@@ -284,8 +284,6 @@ ul { list-style: none; }
   color: var(--color-green);
   margin-bottom: var(--space-md);
 }
-.section-title::before,
-.section-contacts .section-title::before { content: '// '; }
 
 .section-footer { margin-top: var(--space-md); }
 .section-contacts { margin-bottom: var(--space-lg); }
@@ -321,7 +319,7 @@ ul { list-style: none; }
   margin-bottom: var(--space-md);
 }
 .hero-tagline::before { content: ' '; }
-.hero-tagline::after  { content: "passionnée par l'informatique et les mathématiques"; }
+.hero-tagline::after  { content: "spécialisation en DEVOPS et gestion des données"; }
 
 .hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
 
