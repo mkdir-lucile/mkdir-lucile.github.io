@@ -410,7 +410,7 @@ ul { list-style: none; }
   margin-bottom: var(--space-md);
 }
 .hero-tagline::before { content: '/* '; }
-.hero-tagline::after  { content: ' */'; }
+.hero-tagline::after  { content: "passionnée par l'informatique et les mathématiques */ "; }
 
 .hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
 
@@ -421,6 +421,16 @@ ul { list-style: none; }
   object-fit: cover;
   border-radius: var(--radius-md);
   border: 1px solid #dde6f0;
+}
+
+/* uniquement utile pour la version mobile */
+.hero-top{
+  display : contents;
+}
+
+/* Desktop : hero-text reprend son comportement normal */
+.hero-text {
+  flex: 1;
 }
 
 
@@ -555,25 +565,39 @@ ul { list-style: none; }
 
 
 /* ── 17. RESPONSIVE ───────────────────────────────────────── */
-
 @media (max-width: 768px) {
   .sidebar { display: none; }
 
-  .hero { flex-direction: column-reverse; }
-  .hero-image img { width: 130px; height: 162px; }
+  /* Sur mobile, hero-top redevient un vrai flex row */
+  .hero { display: block; }
+
+  .hero-top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .hero-image { flex-shrink: 0; }
+  .hero-image img { width: 100px; height: 150px; }
+
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-name { font-size: 1.5rem; margin-bottom: 0.3rem; }
+
+  .hero-tagline {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  .hero-tagline::before { content: ''; }
+  .hero-tagline::after  { content: ''; }
+
+  .herop { width: 100%; font-size: 0.78rem; }
 
   .editor-body { padding: var(--space-sm); }
   .line-numbers { display: none; }
-
   .project-grid { grid-template-columns: 1fr; }
 
-  .herop,
   .about p,
-  .section-contacts p {
-  font-size: 0.78rem;
-  }
-
-  .hero-tagline{
-  font-size: 0.82rem;
-  }
+  .section-contacts p { font-size: 0.78rem; }
 }
