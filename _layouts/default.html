@@ -3,79 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Le titre change selon chaque page, avec le nom du site en suffixe -->
   <title>{{ page.title }} — {{ site.title }}</title>
-
   <meta name="description" content="{{ page.description | default: site.description }}">
-
-  <!-- Ton CSS principal -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
 <body>
 
-  <!-- ==================== HEADER ==================== -->
-  <!-- Ce bloc apparaît sur toutes les pages.           -->
-  <!-- Tu pourras le déplacer dans _includes/header.html plus tard. -->
-  <header class="site-header">
-    <div class="container">
+  <!-- ══════════════════════════════════════════════
+       ACTIVITY BAR — bande d'icônes à gauche
+       ══════════════════════════════════════════════ -->
+  <div class="activity-bar">
+    <div class="activity-icon activity-icon--active" title="Explorateur">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 7h6l2 2h10v11H3z"/>
+      </svg>
+    </div>
+    <div class="activity-icon" title="Compte">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M8 6h8M12 8v8"/>
+      </svg>
+    </div>
+  </div>
 
-      <a href="{{ '/' | relative_url }}" class="site-title">
-        {{ site.title }}
+  <!-- ══════════════════════════════════════════════
+       SIDEBAR — panneau latéral bleuté foncé
+       ══════════════════════════════════════════════ -->
+  <div class="sidebar">
+    <div class="sidebar-title">EXPLORATEUR</div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-header">&#9660; PORTFOLIO</div>
+      <ul class="sidebar-tree">
+        <li class="sidebar-item {% if page.url == '/' %}sidebar-item--active{% endif %}">
+          <span class="sidebar-file-icon">◈</span>
+          <a href="{{ '/' | relative_url }}">index.html</a>
+        </li>
+        <li class="sidebar-item {% if page.url contains '/projets' %}sidebar-item--active{% endif %}">
+          <span class="sidebar-file-icon">◈</span>
+          <a href="{{ '/projets/' | relative_url }}">projets.html</a>
+        </li>
+        <li class="sidebar-item {% if page.url contains '/competences' %}sidebar-item--active{% endif %}">
+          <span class="sidebar-file-icon">◈</span>
+          <a href="{{ '/competences/' | relative_url }}">competences.html</a>
+        </li>
+        <li class="sidebar-item {% if page.url contains '/contact' %}sidebar-item--active{% endif %}">
+          <span class="sidebar-file-icon">◈</span>
+          <a href="{{ '/contact/' | relative_url }}">contact.html</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-header">&#9660; LIENS</div>
+      <ul class="sidebar-tree">
+        <li class="sidebar-item">
+          <span class="sidebar-file-icon">⎇</span>
+          <a href="https://github.com/{{ site.github_username }}" target="_blank">github</a>
+        </li>
+        <li class="sidebar-item">
+          <span class="sidebar-file-icon">✉</span>
+          <a href="mailto:{{ site.email }}">mail</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       ZONE ÉDITEUR — droite de l'écran
+       ══════════════════════════════════════════════ -->
+  <div class="editor-zone">
+
+    <!-- ── Barre d'onglets ── -->
+    <div class="tab-bar">
+      <a href="{{ '/' | relative_url }}"
+         class="tab {% if page.url == '/' %}tab--active{% endif %}">
+        <span class="tab-icon">◈</span>
+        <span class="tab-name">index.html</span>
+        <span class="tab-close" aria-hidden="true">×</span>
       </a>
-
-      <nav class="site-nav">
-        <a href="{{ '/' | relative_url }}"
-           class="nav-link {% if page.url == '/' %}active{% endif %}">
-          lucile
-        </a>
-        <a href="{{ '/competences/' | relative_url }}"
-           class="nav-link {% if page.url contains '/competences' %}active{% endif %}">
-          compétences
-        </a>
-        <a href="{{ '/projets/' | relative_url }}"
-           class="nav-link {% if page.url contains '/projets' %}active{% endif %}">
-          projets
-        </a>
-        <a href="{{ '/contact/' | relative_url }}"
-           class="nav-link {% if page.url contains '/contact' %}active{% endif %}">
-          contact
-        </a>
-      </nav>
-
+      <a href="{{ '/projets/' | relative_url }}"
+         class="tab {% if page.url contains '/projets' %}tab--active{% endif %}">
+        <span class="tab-icon">◈</span>
+        <span class="tab-name">projets.c</span>
+        <span class="tab-close" aria-hidden="true">×</span>
+      </a>
+      <a href="{{ '/competences/' | relative_url }}"
+         class="tab {% if page.url contains '/competences' %}tab--active{% endif %}">
+        <span class="tab-icon">◈</span>
+        <span class="tab-name">competences.hs</span>
+        <span class="tab-close" aria-hidden="true">×</span>
+      </a>
+      <a href="{{ '/contact/' | relative_url }}"
+         class="tab {% if page.url contains '/contact' %}tab--active{% endif %}">
+        <span class="tab-icon">◈</span>
+        <span class="tab-name">contacts.css</span>
+        <span class="tab-close" aria-hidden="true">×</span>
+      </a>
     </div>
-  </header>
-  <!-- ================================================ -->
 
-
-  <!-- ==================== CONTENU ==================== -->
-  <!-- C'est ici que Jekyll injecte le contenu de       -->
-  <!-- chaque page (index.html, projets.html, etc.)     -->
-  <main class="site-main">
-    <div class="container">
-      {{ content }}
+    <!-- ── Breadcrumb ── -->
+    <div class="breadcrumb">
+      <span class="bc-segment">portfolio</span>
+      <span class="bc-sep">›</span>
+      <span class="bc-segment bc-active">index.html</span>
     </div>
-  </main>
-  <!-- ================================================= -->
 
+    <!-- ── Contenu éditeur avec numéros de ligne ── -->
+    <main class="editor-content">
+      <div class="line-numbers" aria-hidden="true" id="line-numbers"></div>
+      <div class="editor-body" id="editor-body">
+        {{ content }}
+      </div>
+    </main>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>BSD-3 © {{ 'now' | date: '%Y' }} {{ site.title }}</p>
-      <p>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        &nbsp;·&nbsp;
-        <a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a>
-      </p>
-    </div>
-  </footer>
-  <!-- ================================================ -->
+    <!-- ── Status bar ── -->
+    <footer class="status-bar">
+      <div class="status-left">
+        <span class="status-item status-branch">⎇ main</span>
+        <span class="status-item">Jekyll</span>
+      </div>
+      <div class="status-right">
+        <span class="status-item">HTML</span>
+        <span class="status-item">UTF-8</span>
+        <span class="status-item">© {{ 'now' | date: '%Y' }} {{ site.title }}</span>
+      </div>
+    </footer>
 
+  </div><!-- /editor-zone -->
 
-  <!-- Ton JS (optionnel, chargé en dernier pour la performance) -->
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script>
+    // Génère les numéros de ligne dynamiquement selon la hauteur du contenu
+    const body = document.getElementById('editor-body');
+    const nums = document.getElementById('line-numbers');
+    function renderLines() {
+      const lineHeight = 24;
+      const count = Math.max(30, Math.ceil(body.scrollHeight / lineHeight));
+      nums.innerHTML = Array.from({length: count}, (_, i) =>
+        `<span>${i + 1}</span>`
+      ).join('');
+    }
+    renderLines();
+    window.addEventListener('resize', renderLines);
+  </script>
 
 </body>
 </html>

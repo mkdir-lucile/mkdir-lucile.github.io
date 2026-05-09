@@ -1,210 +1,372 @@
 /* ============================================================
-   PORTFOLIO LUCILE — thème VSCode Light
-   Structure : variables → reset → layout → header →
-               hero → sections → projets → compétences →
-               contacts → boutons → footer → responsive
+   PORTFOLIO LUCILE — VSCode immersif
+   Sidebar bleutée foncée · Onglets pastel · Éditeur blanc cassé
    ============================================================ */
 
 
 /* ── 1. VARIABLES ─────────────────────────────────────────── */
 
 :root {
-  /* Palette VSCode Light */
-  --color-bg:            #f3f3f3;
-  --color-surface:       #ffffff;
-  --color-surface-alt:   #f8f8f8;
-  --color-border:        #e4e4e4;
-  --color-border-strong: #c8c8c8;
+  /* Sidebar / activity bar — bleuté foncé VSCode */
+  --sidebar-bg:        #1e3a5f;
+  --sidebar-hover:     #254a77;
+  --sidebar-active:    #2d5a8e;
+  --sidebar-text:      #a8c4e0;
+  --sidebar-text-dim:  #6a90b8;
+  --sidebar-title:     #7aabda;
 
-  /* Texte */
-  --color-text:          #1e1e1e;
-  --color-muted:         #6a737d;
+  --activity-bg:       #17304f;
+  --activity-icon:     #6a90b8;
+  --activity-active:   #ffffff;
 
-  /* Accents inspirés de la coloration syntaxique VSCode Light */
-  --color-blue:          #0070c1;   /* mots-clés */
-  --color-purple:        #7c4dff;   /* types / classes */
-  --color-green:         #008000;   /* strings / commentaires */
-  --color-teal:          #267f99;   /* types primitifs */
+  /* Barre d'onglets — bleuté pastel */
+  --tabbar-bg:         #ccdff5;
+  --tab-bg:            #b8d0ed;
+  --tab-active-bg:     #ffffff;
+  --tab-active-border: #0070c1;
+  --tab-text:          #3a5a7a;
+  --tab-text-active:   #1e1e1e;
 
-  --color-accent:        var(--color-blue);
-  --color-accent-light:  #ddeeff;
+  /* Éditeur */
+  --editor-bg:         #fffffe;
+  --editor-text:       #1e1e1e;
+
+  /* Breadcrumb */
+  --breadcrumb-bg:     #f0f4fa;
+  --breadcrumb-text:   #6a90b8;
+  --breadcrumb-active: #1e1e1e;
+
+  /* Status bar — bleu VSCode */
+  --statusbar-bg:      #0070c1;
+  --statusbar-text:    #ffffff;
 
   /* Numéros de ligne */
-  --color-line-num:      #a0a0a0;
+  --line-num-color:    #c0ccd8;
+  --line-num-bg:       #f5f8fc;
+  --line-num-width:    3rem;
+
+  /* Syntaxe */
+  --color-blue:        #0070c1;
+  --color-purple:      #7c4dff;
+  --color-green:       #008000;
+  --color-teal:        #267f99;
+  --color-muted:       #6a737d;
 
   /* Polices */
-  --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono',
-               'Consolas', 'Courier New', monospace;
+  --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
   --font-ui:   -apple-system, 'Segoe UI', system-ui, sans-serif;
 
   /* Espacements */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  2rem;
-  --space-lg:  4rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3.5rem;
 
-  --container-width: 880px;
-  --transition: 0.18s ease;
-  --radius-sm: 4px;
-  --radius-md: 6px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --transition: 0.15s ease;
+
+  /* Largeurs */
+  --activity-width: 48px;
+  --sidebar-width:  220px;
 }
 
 
 /* ── 2. RESET ─────────────────────────────────────────────── */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
+html, body { height: 100%; }
 body {
   font-family: var(--font-ui);
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: var(--editor-text);
+  background: var(--sidebar-bg);
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
 }
-
 img { max-width: 100%; display: block; }
-
-a { color: var(--color-accent); text-decoration: none; }
+a { color: var(--color-blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
-
 ul { list-style: none; }
 
 
-/* ── 3. LAYOUT ────────────────────────────────────────────── */
+/* ── 3. ACTIVITY BAR ──────────────────────────────────────── */
 
-.container {
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 var(--space-md);
+.activity-bar {
+  width: var(--activity-width);
+  background: var(--activity-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--space-sm);
+  gap: var(--space-sm);
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.05);
 }
 
-.site-main { padding: var(--space-lg) 0; }
-
-
-/* ── 4. HEADER — barre d'onglets VSCode ───────────────────── */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--color-surface-alt);
-  border-bottom: 1px solid var(--color-border);
+.activity-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--activity-icon);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--transition);
+  border-left: 2px solid transparent;
+}
+.activity-icon:hover { color: var(--activity-active); }
+.activity-icon--active {
+  color: var(--activity-active);
+  border-left-color: var(--activity-active);
 }
 
-.site-header .container {
+
+/* ── 4. SIDEBAR ───────────────────────────────────────────── */
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-title {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--sidebar-text-dim);
+  padding: 0.9rem var(--space-sm) 0.4rem;
+  user-select: none;
+}
+
+.sidebar-section { margin-bottom: var(--space-sm); }
+
+.sidebar-section-header {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--sidebar-text);
+  padding: 0.3rem var(--space-sm);
+  cursor: default;
+  user-select: none;
+  letter-spacing: 0.04em;
+}
+
+.sidebar-tree { padding: 0 0 var(--space-xs); }
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.2rem var(--space-sm) 0.2rem calc(var(--space-sm) + 8px);
+  transition: background var(--transition);
+  border-radius: 0;
+}
+.sidebar-item:hover { background: var(--sidebar-hover); }
+.sidebar-item--active { background: var(--sidebar-active); }
+
+.sidebar-file-icon {
+  font-size: 0.7rem;
+  color: var(--sidebar-text-dim);
+  flex-shrink: 0;
+}
+
+.sidebar-item a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.sidebar-item--active a { color: #ffffff; }
+.sidebar-item:hover a { color: #ffffff; }
+
+
+/* ── 5. ZONE ÉDITEUR ──────────────────────────────────────── */
+
+.editor-zone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--editor-bg);
+}
+
+
+/* ── 6. BARRE D'ONGLETS ───────────────────────────────────── */
+
+.tab-bar {
   display: flex;
   align-items: stretch;
-  justify-content: space-between;
-  height: 56px;
+  background: var(--tabbar-bg);
+  height: 38px;
+  flex-shrink: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.tab-bar::-webkit-scrollbar { display: none; }
 
-.site-title {
+.tab {
   display: flex;
   align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  background: var(--tab-bg);
+  color: var(--tab-text);
   font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  padding: 0 var(--space-sm);
-}
-.site-title:hover { color: var(--color-text); text-decoration: none; }
-
-/* Onglets de navigation */
-.site-nav { display: flex; align-items: stretch; }
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  padding: 0 1.1rem;
-  font-family: var(--font-ui);
-  font-size: 0.85rem;
-  color: var(--color-muted);
-  border-right: 1px solid var(--color-border);
-  border-top: 2px solid transparent;
-  transition: color var(--transition), background var(--transition);
+  font-size: 0.82rem;
   white-space: nowrap;
+  border-right: 1px solid rgba(0,0,0,0.08);
+  border-top: 2px solid transparent;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+  flex-shrink: 0;
+  cursor: pointer;
 }
-.nav-link:first-child { border-left: 1px solid var(--color-border); }
-.nav-link:hover { background: var(--color-surface); color: var(--color-text); text-decoration: none; }
-
-/* Onglet actif : fond blanc + trait bleu en haut */
-.nav-link.active {
-  background: var(--color-surface);
-  color: var(--color-text);
-  border-top-color: var(--color-blue);
-  font-weight: 500;
+.tab:hover {
+  background: #cce3f8;
+  color: var(--tab-text-active);
+  text-decoration: none;
 }
 
-/* Icône fichier devant chaque onglet */
-.nav-link::before {
-  content: '◈';
-  font-size: 0.65rem;
-  margin-right: 6px;
-  opacity: 0.4;
+/* Onglet actif : fond blanc, trait bleu en haut */
+.tab--active {
+  background: var(--tab-active-bg);
+  color: var(--tab-text-active);
+  border-top-color: var(--tab-active-border);
 }
-.nav-link.active::before { opacity: 1; color: var(--color-blue); }
+
+.tab-icon {
+  font-size: 0.62rem;
+  opacity: 0.6;
+  color: var(--color-blue);
+}
+.tab--active .tab-icon { opacity: 1; }
+
+.tab-name { font-size: 0.82rem; }
+
+.tab-close {
+  font-size: 0.9rem;
+  opacity: 0;
+  margin-left: 2px;
+  color: var(--tab-text);
+  line-height: 1;
+  transition: opacity var(--transition);
+}
+/* Croix visible sur l'onglet actif ou au survol */
+.tab--active .tab-close { opacity: 0.5; }
+.tab:hover .tab-close    { opacity: 0.5; }
 
 
-/* ── 5. NUMÉROS DE LIGNE ──────────────────────────────────── */
+/* ── 7. BREADCRUMB ────────────────────────────────────────── */
 
-body { counter-reset: line-section; }
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.25rem var(--space-sm);
+  background: var(--breadcrumb-bg);
+  border-bottom: 1px solid #dde6f0;
+  flex-shrink: 0;
+}
+
+.bc-segment {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--breadcrumb-text);
+}
+.bc-active { color: var(--breadcrumb-active); }
+.bc-sep {
+  font-size: 0.7rem;
+  color: var(--breadcrumb-text);
+  opacity: 0.5;
+}
+
+
+/* ── 8. ÉDITEUR + NUMÉROS DE LIGNE ───────────────────────── */
+
+.editor-content {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+  background: var(--editor-bg);
+}
+
+.line-numbers {
+  width: var(--line-num-width);
+  background: var(--line-num-bg);
+  border-right: 1px solid #e4ecf4;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md) 0;
+  user-select: none;
+}
+.line-numbers span {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--line-num-color);
+  text-align: right;
+  padding-right: 10px;
+  line-height: 24px;
+  display: block;
+}
+
+.editor-body {
+  flex: 1;
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  max-width: 860px;
+}
+
+
+/* ── 9. STATUS BAR ────────────────────────────────────────── */
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--statusbar-bg);
+  height: 24px;
+  padding: 0 var(--space-sm);
+  flex-shrink: 0;
+}
+
+.status-left, .status-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.status-item {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--statusbar-text);
+  opacity: 0.9;
+}
+.status-branch { opacity: 1; font-weight: 500; }
+
+
+/* ── 10. CONTENU DES SECTIONS ─────────────────────────────── */
+
+/* Compteur de lignes CSS pour les sections */
+.editor-body { counter-reset: line-section; }
 
 .section,
 .section-contacts {
   position: relative;
   margin-bottom: var(--space-lg);
-  padding-left: 3.5rem;
 }
 
-.section::before,
-.section-contacts::before {
-  counter-increment: line-section;
-  content: counter(line-section);
-  position: absolute;
-  left: 0;
-  top: 0.1rem;
-  width: 2.6rem;
-  text-align: right;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--color-line-num);
-  user-select: none;
-}
-
-
-/* ── 6. TITRES DE SECTION — style commentaire ─────────────── */
-
-.section-title {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--color-green);
-  margin-bottom: var(--space-md);
-}
-.section-title::before { content: '// '; }
-
-.section-footer { margin-top: var(--space-md); }
-
-
-/* ── 7. TEXTE DES PARAGRAPHES — monospace ─────────────────── */
-
-.about p,
-.section-contacts p {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  color: var(--color-muted);
-  line-height: 2;
-}
-
-.section-contacts p a { color: var(--color-green); font-family: var(--font-mono); }
-.section-contacts p a:hover { text-decoration: underline; }
-
-.section-contacts { margin-bottom: var(--space-lg); }
+/* Titres — style commentaire vert */
+.section-title,
 .section-contacts .section-title {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -212,36 +374,36 @@ body { counter-reset: line-section; }
   color: var(--color-green);
   margin-bottom: var(--space-md);
 }
+.section-title::before,
 .section-contacts .section-title::before { content: '// '; }
 
+.section-footer { margin-top: var(--space-md); }
+.section-contacts { margin-bottom: var(--space-lg); }
 
-/* ── 8. HERO ──────────────────────────────────────────────── */
 
+/* ── 11. HERO ─────────────────────────────────────────────── */
+
+/* Pas d'encart autour du hero — fond éditeur nu */
 .hero {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-lg);
   margin-bottom: var(--space-lg);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+  padding-top: var(--space-xs);
 }
 
 .hero-text { flex: 1; }
 
-/* Nom — couleur "variable" bleue */
 .hero-name {
   font-family: var(--font-mono);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--color-blue);
   line-height: 1.15;
   margin-bottom: var(--space-sm);
 }
 
-/* Tagline — style commentaire bloc */
 .hero-tagline {
   font-family: var(--font-mono);
   font-size: 0.88rem;
@@ -256,78 +418,90 @@ body { counter-reset: line-section; }
 
 .hero-image { flex-shrink: 0; }
 .hero-image img {
-  width: 200px;
-  height: 250px;
+  width: 190px;
+  height: 237px;
   object-fit: cover;
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  border: 1px solid #dde6f0;
 }
 
 
-/* ── 9. BOUTONS ───────────────────────────────────────────── */
+/* ── 12. TEXTE / PARAGRAPHES ──────────────────────────────── */
+
+.about p,
+.section-contacts p {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 2;
+}
+.section-contacts p a { color: var(--color-green); }
+.section-contacts p a:hover { text-decoration: underline; }
+
+
+/* ── 13. BOUTONS ──────────────────────────────────────────── */
 
 .btn {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   transition: all var(--transition);
   cursor: pointer;
 }
-
 .btn-primary {
   background: var(--color-blue);
   color: #fff;
   border-color: var(--color-blue);
 }
-.btn-primary:hover { background: #005aa3; border-color: #005aa3; text-decoration: none; }
-
+.btn-primary:hover { background: #005aa3; text-decoration: none; }
 .btn-secondary {
   background: transparent;
   color: var(--color-blue);
-  border-color: var(--color-border-strong);
+  border-color: #b0c8e0;
 }
-.btn-secondary:hover { background: var(--color-accent-light); border-color: var(--color-blue); text-decoration: none; }
+.btn-secondary:hover { background: #ddeeff; border-color: var(--color-blue); text-decoration: none; }
 
 
-/* ── 10. PROJETS ──────────────────────────────────────────── */
+/* ── 14. PROJETS ──────────────────────────────────────────── */
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-sm);
 }
 
 .project-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: #fafcff;
+  border: 1px solid #dde6f0;
   border-left: 3px solid var(--color-purple);
   border-radius: var(--radius-md);
-  padding: 1.1rem 1.2rem;
+  padding: 1rem 1.1rem;
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition), border-color var(--transition);
 }
-.project-card:hover { box-shadow: 0 2px 12px rgba(0, 112, 193, 0.1); }
+.project-card:hover {
+  box-shadow: 0 2px 10px rgba(0,112,193,0.1);
+  border-color: var(--color-purple);
+}
 
-/* Titre carte — style "function name" */
 .project-card-title {
   font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: var(--color-blue);
 }
 .project-card-title::before { content: 'fn '; color: var(--color-purple); }
 
-/* Description — commentaire */
 .project-card-desc {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--color-muted);
-  line-height: 1.65;
+  line-height: 1.6;
   flex: 1;
 }
 
@@ -335,35 +509,34 @@ body { counter-reset: line-section; }
 
 .project-card-link {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--color-teal);
   margin-top: var(--space-xs);
 }
 .project-card-link:hover { text-decoration: underline; }
 
 
-/* ── 11. TAGS ─────────────────────────────────────────────── */
+/* ── 15. TAGS ─────────────────────────────────────────────── */
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  padding: 2px 8px;
+  font-size: 0.7rem;
+  padding: 2px 7px;
   border-radius: var(--radius-sm);
-  background: var(--color-accent-light);
+  background: #ddeeff;
   color: var(--color-blue);
   border: 1px solid #b3d0f0;
 }
 
 
-/* ── 12. COMPÉTENCES ──────────────────────────────────────── */
+/* ── 16. COMPÉTENCES ──────────────────────────────────────── */
 
-.skills-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: var(--space-md); }
-
-.skill-item { display: flex; align-items: center; gap: 1rem; }
+.skills-list { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: var(--space-md); }
+.skill-item  { display: flex; align-items: center; gap: 1rem; }
 
 .skill-name {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--color-teal);
   min-width: 110px;
 }
@@ -371,11 +544,10 @@ body { counter-reset: line-section; }
 .skill-bar {
   flex: 1;
   height: 4px;
-  background: var(--color-border);
+  background: #dde6f0;
   border-radius: 99px;
   overflow: hidden;
 }
-
 .skill-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
@@ -383,42 +555,16 @@ body { counter-reset: line-section; }
 }
 
 
-/* ── 13. FOOTER ───────────────────────────────────────────── */
+/* ── 17. RESPONSIVE ───────────────────────────────────────── */
 
-.site-footer {
-  background: var(--color-surface-alt);
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-sm) 0;
-}
+@media (max-width: 768px) {
+  .sidebar { display: none; }
 
-.site-footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-}
+  .hero { flex-direction: column-reverse; }
+  .hero-image img { width: 130px; height: 162px; }
 
-.site-footer p,
-.site-footer a {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  color: var(--color-line-num);
-}
-.site-footer a:hover { color: var(--color-green); text-decoration: underline; }
-
-
-/* ── 14. RESPONSIVE ───────────────────────────────────────── */
-
-@media (max-width: 640px) {
-  .hero { flex-direction: column-reverse; text-align: center; }
-  .hero-actions { justify-content: center; }
-  .hero-image img { width: 140px; height: 175px; margin: 0 auto; }
-
-  .nav-link { padding: 0 0.65rem; font-size: 0.78rem; }
-
-  .section,
-  .section-contacts { padding-left: 2rem; }
+  .editor-body { padding: var(--space-sm); }
+  .line-numbers { display: none; }
 
   .project-grid { grid-template-columns: 1fr; }
 }
