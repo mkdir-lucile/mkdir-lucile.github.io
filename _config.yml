@@ -26,6 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mkdir-lucile.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  mkdir-lucile
+likedin_url: www.linkedin.com/in/lucile-hudry-202957406
 
 theme: null
 plugins: []
