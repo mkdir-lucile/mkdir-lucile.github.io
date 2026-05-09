@@ -14,7 +14,7 @@
        ACTIVITY BAR — bande d'icônes à gauche
        ══════════════════════════════════════════════ -->
   <div class="activity-bar">
-    <div class="activity-icon activity-icon--active" title="Explorateur">
+    <div class="activity-icon activity-icon--active" id="sidebar-toggle" title="Explorateur">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M3 7h6l2 2h10v11H3z"/>
       </svg>
@@ -22,9 +22,9 @@
   </div>
 
   <!-- ══════════════════════════════════════════════
-       SIDEBAR — panneau latéral bleuté foncé
+       SIDEBAR — panneau latéral
        ══════════════════════════════════════════════ -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <div class="sidebar-section">
       <div class="sidebar-section-header">&#9660; PORTFOLIO</div>
       <ul class="sidebar-tree">
@@ -59,7 +59,7 @@
         </li>
         <li class="sidebar-item">
           <span class="sidebar-file-icon">in</span>
-          <a href="mailto:{{ site.email }}">linkedIn</a>
+          <a href="{{ site.linkedin_url }}" target="_blank">linkedIn</a>
         </li>
       </ul>
     </div>
@@ -105,9 +105,9 @@
       </div>
     </main>
 
-  </div>
+  </div><!-- /editor-zone -->
 
-<script>
+  <script>
     // Animation d'entrée des onglets inactifs
     document.querySelectorAll('.tab--inactive').forEach((tab, i) => {
       tab.style.transform = 'translateX(40px)';
@@ -117,6 +117,28 @@
         tab.style.transform = 'translateX(0)';
         tab.style.opacity = '1';
       }, 80 + i * 60);
+    });
+
+    // Sidebar mobile : toggle au clic sur l'icône fichier
+    const toggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar--open');
+    });
+
+    // Ferme la sidebar si on clique en dehors
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+        sidebar.classList.remove('sidebar--open');
+      }
+    });
+
+    // Ferme la sidebar après navigation
+    sidebar.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('sidebar--open');
+      });
     });
   </script>
 

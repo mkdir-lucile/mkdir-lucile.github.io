@@ -237,7 +237,11 @@ description: "Projets de Lucile — future ingénieure informatique"
 </section>
 
 <style>
-.projects-page { margin-bottom: 0; }
+
+.projects-page {
+  margin-bottom: 0;
+  overflow-x: hidden;
+}
 
 .carousel-hint {
   display: flex;
@@ -274,6 +278,9 @@ description: "Projets de Lucile — future ingénieure informatique"
   scroll-behavior: smooth;
   scrollbar-width: none;
   margin: 0 calc(-1 * var(--space-md));
+  /* empêche le dépassement */
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 .carousel-track::-webkit-scrollbar { display: none; }
 

@@ -318,8 +318,6 @@ ul { list-style: none; }
   line-height: 2;
   margin-bottom: var(--space-md);
 }
-.hero-tagline::before { content: ' '; }
-.hero-tagline::after  { content: "spécialisation en DEVOPS et gestion des données"; }
 
 .hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
 
@@ -502,25 +500,44 @@ ul { list-style: none; }
 
 
 /* ── RESPONSIVE ───────────────────────────────────────── */
+
 @media (max-width: 768px) {
-  .sidebar { display: none; }
 
-  /* Sur mobile, hero-top redevient un vrai flex row */
+  /* Sidebar cachée par défaut, glisse depuis la gauche au clic */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: var(--activity-width);
+    height: 100vh;
+    width: var(--sidebar-width);
+    z-index: 100;
+    box-shadow: 4px 0 16px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .sidebar--open {
+    display: flex;
+  }
+
+  /* Editor-zone prend toute la largeur disponible */
+  .editor-zone {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Hero */
   .hero { display: block; }
-
   .hero-top {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: var(--space-sm);
   }
-
   .hero-image { flex-shrink: 0; }
   .hero-image img { width: 100px; height: 150px; }
-
   .hero-text { flex: 1; min-width: 0; }
   .hero-name { font-size: 1.5rem; margin-bottom: 0.3rem; }
-
   .hero-tagline {
     font-size: 0.75rem;
     line-height: 1.6;
@@ -528,12 +545,10 @@ ul { list-style: none; }
   }
   .hero-tagline::before { content: ''; }
   .hero-tagline::after  { content: ''; }
-
   .herop { width: 100%; font-size: 0.78rem; }
 
   .editor-body { padding: var(--space-sm); }
   .project-grid { grid-template-columns: 1fr; }
-
   .about p,
   .section-contacts p { font-size: 0.78rem; }
 }
